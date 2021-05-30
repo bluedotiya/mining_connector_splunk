@@ -7,6 +7,7 @@ miner_helper_scripts_path="" # Path to helper scripts folder
 splunk_HTTP_Connector_Token=""
 splunk_machine_ip_port="ip:8088"  #Default port is 8088
 stats_data_path="/var/tmp"  # Path to the data files on simplemining OS this is found on /var/tmp
+data_list="stats_sys_ipLAN\|stats_hash\|stats_sys_pwr\|stats_gpu_temp_jq\|stats_sys_uptime\|stats_eth_price\|stats_wei_daily\|stats_wei_unpaid\|stats_usd_to_nis"
 sleep_offset=0 # if the script is commited by Crontab this can help pick which script will execute first. (In seconds)
 
 sleep $sleep_offset
@@ -28,7 +29,7 @@ else
 fi
 # Gets all the hardware stats from tmp folder and run in a for each loop.
 echo "miner_name=$miner_name" >> $miner_logs_path/miner_$timestamp.log
-for i in $(ls $stats_data_path | grep "stats_sys_ipLAN\|stats_hash\|stats_sys_pwr\|stats_gpu_temp_jq\|stats_sys_uptime\|stats_eth_price\|stats_wei_daily\|stats_wei_unpaid\|stats_usd_to_nis" | grep -v ".sent") 
+for i in $(ls $stats_data_path | grep $data_list | grep -v ".sent") 
 do
 echo -n "$i=\"" >> $miner_logs_path/miner_$timestamp.log
 if [[ "$i" =~ "jq" ]] # check if data file is JSON Format
