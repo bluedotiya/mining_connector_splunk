@@ -9,6 +9,7 @@ splunk_machine_ip_port="ip:8088"  #Default port is 8088
 stats_data_path="/var/tmp"  # Path to the data files on simplemining OS this is found on /var/tmp
 data_list="stats_sys_ipLAN\|stats_hash\|stats_sys_pwr\|stats_gpu_temp_jq\|stats_sys_uptime\|stats_eth_price\|stats_wei_daily\|stats_wei_unpaid\|stats_usd_to_nis"
 sleep_offset=0 # if the script is commited by Crontab this can help pick which script will execute first. (In seconds)
+use_helper_scripts=$false
 
 sleep $sleep_offset
 
@@ -16,10 +17,13 @@ sleep $sleep_offset
 timestamp=$(date +%Y-%m-%dT%H:%M:%S)  # This Timestamp the logs to splunk
 
 #helper scripts that are desgined to get external values from Pools or Currency API, Disabled by Default
-#bash $miner_helper_scripts_path/eth_price_watch.sh
-#bash $miner_helper_scripts_path/wei_daily_rev.sh
-#bash $miner_helper_scripts_path/wei_unpaid_balance.sh
-#bash $miner_helper_scripts_path/usd_nis_watch.sh
+if [ $use_helper_scripts = $true ]
+then
+	for filename in $(ls $miner_helper_scripts_path | grep *.sh)
+	do
+	bash $filename
+	done
+fi
 
 # Test if folder exist if not creates one.
 if [ -d "$miner_logs_path" ] 
