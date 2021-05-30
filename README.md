@@ -1,4 +1,4 @@
-# mining_splunk:
+# mining_connector_splunk:
 An HTTPS Connector made to send data from the mining rig to Splunk 
 
 # Requirement:
