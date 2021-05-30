@@ -2,7 +2,7 @@
 
 #config
 miner_name=""  #set the desiered miner name (if you have multiple miners can be useful)
-miner_logs_path="" #Path the temporary script will be saved
+miner_logs_path="" #Path the temporary logs will be saved
 miner_helper_scripts_path="" # Path to helper scripts folder
 splunk_HTTP_Connector_Token=""
 splunk_machine_ip_port="ip:8088"  #Default port is 8088
