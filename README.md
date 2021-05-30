@@ -68,4 +68,10 @@ A3: Yes, The script works as follows (data_send):
 4. after helper scripts are executed the data_send script fetches the data from the files in **stats_data_path** folder with the **data_list** as grep filter - in simple words **stats_data_path** can contain whatever you want but only the filenames in **data_list** variable will be sent to Splunk.
 5. Please also Refer to Q2 For more in depth answer
 
-If You have any question you contact me on ooorannn@gmail.com or though github (if that possible :P), Have a great day.
+My Final Dashboard in Splunk:
+![image](https://user-images.githubusercontent.com/75704012/120104759-b99b9580-c15e-11eb-9f51-7440dfdb972e.png)
+Raw data in splunk:
+![image](https://user-images.githubusercontent.com/75704012/120104819-0aab8980-c15f-11eb-8777-4e1126c0c620.png)
+
+
+If You have any question you can contact me on ooorannn@gmail.com or though github (if that possible :P), Have a great day.
