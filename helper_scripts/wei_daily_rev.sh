@@ -4,6 +4,7 @@
 
 #Constant
 wallet_address=""
+output_path="/var/tmp"
 wei_get_daily=$(curl -X GET "https://flexpool.io/api/v1/miner/$wallet_address/estimatedDailyRevenue/" | cut -d : -f3 | cut -d \} -f1)
 
-echo $wei_get_daily > /var/tmp/stats_wei_daily
+echo $wei_get_daily > $output_path/stats_wei_daily
