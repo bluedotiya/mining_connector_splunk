@@ -66,4 +66,6 @@ A3: Yes, The script works as follows (data_send):
 2. data_send gets the filename list it needs to send from the variable **data_list** so please be sure the output file name of your custom script is added to this variable
 3. data_send execute the helper scripts from the path **miner_helper_scripts_path** using bash (only .sh files)
 4. after helper scripts are executed the data_send script fetches the data from the files in **stats_data_path** folder with the **data_list** as grep filter - in simple words **stats_data_path** can contain whatever you want but only the filenames in **data_list** variable will be sent to Splunk.
-5. Please also Refer to Q2 For more in depth answer 
+5. Please also Refer to Q2 For more in depth answer
+
+If You have any question you contact me on ooorannn@gmail.com or though github (if that possible :P), Have a great day.
