@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #config
-miner_name=""  #set the desiered miner name (if you have multiple miners can be useful)
+miner_name=""  #set the desired miner name (if you have multiple miners can be useful)
 miner_logs_path="" #Path the temporary logs will be saved
 miner_helper_scripts_path="" # Path to helper scripts folder
 splunk_HTTP_Connector_Token=""
